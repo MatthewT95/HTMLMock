@@ -30,7 +30,7 @@ body {
     font-size: 10pt;
     background-color: darkblue;
     display: grid;
-    grid-template-columns: 130px 200px 1000px 1fr 150px;
+    grid-template-columns: 130px 200px 800px 1fr 150px;
     grid-template-rows: repeat(3, 1fr);
     padding: 10px;
     column-gap: 5px;
@@ -127,6 +127,7 @@ body {
     display: none;
     flex-direction: row;
     align-items: center;
+    font-size: 100%;
 }
 
 #interface .genSettingInput>label {
