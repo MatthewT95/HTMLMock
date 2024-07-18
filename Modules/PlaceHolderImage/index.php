@@ -4,7 +4,7 @@
         $height = $_GET['height'] ?? 400;
         $width = $_GET['width'] ?? 600;
 
-        return [min($seed,3000), min(round($height / 25)  * 25,1200), min(round($width / 25) * 25,1200)];
+        return [max(min($seed,3000),1), min(round($height / 25)  * 25,1200), min(round($width / 25) * 25,1200)];
     }
 
     function validateGetRequest($seed, $height, $width) {
