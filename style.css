@@ -1,0 +1,226 @@
+body {
+    background-color: grey;
+    padding: 0px;
+    margin: 0px;
+}
+
+#content {
+    font-size: 14pt;
+    box-sizing: border-box;
+    width: 100vw;
+    margin: auto;
+    margin-top: none;
+    height: 84vh;
+    overflow-y: scroll;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+#content.lightMode {
+    background-color: white;
+    color: black;
+}
+
+#interface {
+    height: 16vh;
+    width: 100vw;
+    color: white;
+    box-sizing: border-box;
+    font-size: 10pt;
+    background-color: darkblue;
+    display: grid;
+    grid-template-columns: 130px 200px auto repeat(8, 1fr) 150px;
+    grid-template-rows: repeat(3, 1fr);
+    padding: 10px;
+    column-gap: 5px;
+    font-weight: bold;
+}
+
+#interface #btnRegenerate,
+#btnPrepend,
+#btnAppend,
+#btnToggleFormat,
+#btnToggleTheme {
+    font-size: 12pt;
+}
+
+#interface #btnRegenerate {
+    grid-column: 1 /2;
+    grid-row: 1 / 2;
+}
+
+#interface #btnAppend {
+    grid-column: 1 /2;
+    grid-row: 2 / 3;
+}
+
+#interface #btnPrepend {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+#interface #btnToggleFormat {
+    grid-column: 12/13;
+    grid-row: 1/2;
+}
+
+#interface #btnToggleTheme {
+    grid-column: 12/13;
+    grid-row: 2/3;
+}
+
+#interface #lblGenerationMode,
+#lblBlockCount {
+    font-size: 10pt;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+    text-transform: uppercase;
+}
+
+#interface #lblGenerationMode {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+#interface #selGenerationMode {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+#interface #divGenerationSubMode {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+#interface #divGenerationSubMode select {
+    height: 100%;
+    width: 100%;
+}
+
+#interface #divGenerationSubMode select {
+    display: none;
+}
+
+#interface[data-gen-mode="normal"] #selNormalSubMode {
+    display: block;
+}
+
+#interface[data-gen-mode="list"] #selListSubMode {
+    display: block;
+}
+
+#interface #generationSettings {
+    grid-column: 3 /4;
+    grid-row: 1/4;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: lightgreen 3px solid;
+    border-radius: 6px;
+}
+
+#interface #generationSettings>* {
+    width: 300px;
+    height: 30%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+#interface #generationSettings>h2 {
+    padding: 5px;
+    margin: 5px;
+}
+
+#interface .genSettingInput {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+/* Generation Settings UI */
+#interface[data-gen-mode="normal"][data-gen-sub-mode="paragraphs"] :is(.paraCount,
+    .paraMinLen,
+    .paraMaxLen,
+    .senMinLen,
+    .senMaxLen) {
+    display: flex;
+}
+
+#interface[data-gen-mode="normal"][data-gen-sub-mode="sentences"] :is(.senCount,
+    .senMinLen,
+    .senMaxLen) {
+    display: flex;
+}
+
+:is(#interface[data-gen-mode="list"][data-gen-sub-mode="ol-p"],
+    #interface[data-gen-mode="list"][data-gen-sub-mode="ul-p"]) :is(.senMinLen,
+    .senMaxLen,
+    .paraMinLen,
+    .paraMaxLen, .itemCount) {
+    display: flex;
+}
+
+:is(#interface[data-gen-mode="list"][data-gen-sub-mode="ol-s"],
+    #interface[data-gen-mode="list"][data-gen-sub-mode="ul-s"]) :is(.senMinLen,
+    .senMaxLen, .itemCount) {
+    display: flex;
+}
+
+#interface[data-gen-mode="header"] :is(.headerLevel,
+    .senMinLen,
+    .senMaxLen) {
+    display: flex
+}
+
+#interface[data-gen-mode="table"] :is(.senMinLen,
+    .senMaxLen,
+    .paraMinLen,
+    .paraMaxLen,
+    .tblRowCount,
+    .tblColumnCount,
+    .tblHeadersOn,
+    .tableHeadersEnabled) {
+    display: flex
+}
+
+#interface .genSettingInput>* {
+    width: 50%;
+}
+
+.center {
+    text-align: center;
+}
+
+#interface button {
+    background-color: white;
+    border: white solid 5px;
+    margin: 5px;
+}
+
+#interface button:hover {
+    background-color: black;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+#content table,
+th,
+tr,
+td {
+    border: 4px white solid;
+    border-collapse: collapse;
+}
+
+#content.lightMode :is(table,
+    th,
+    tr,
+    td) {
+    border: 4px black solid;
+    border-collapse: collapse;
+}
