@@ -35,10 +35,11 @@
     $location = generateLocation($seed, $height, $width,0, $sourceWidth, 0, $sourceHeight);
 
     header('Content-Type: image/png');
+    // ini_set('display_errors', 1);
+    // error_reporting(E_ALL);
     if (file_exists("./cache/{$seed}-{$height}-{$width}.png")) {
         $cache_path = "./cache/{$seed}-{$height}-{$width}.png";
         $croppedImage = imagecreatefrompng($cache_path);
-        header('Content-Type: image/png');
         imagepng($croppedImage);
     }
     else
