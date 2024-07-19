@@ -188,7 +188,7 @@ function regenerateContent(mode = "u") {
   else if (generationMode == "image") {
     let {imageHeight,imageWidth}=generationSettings;
     let seed=getRandomIntInclusive(0,2000);
-    HTMLContent="<img src='http://localhost/Pseudocontent/Modules/PlaceHolderImage/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
+    HTMLContent="<img src='http:///pseudocontent.matthew-taormina.com/Modules/PlaceHolderImage/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
   }
 
   // Inject content
