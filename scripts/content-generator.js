@@ -191,14 +191,20 @@ function regenerateContent(mode = "u") {
     HTMLContent = generateFakeHTMLTable(generationSettings);
   }
   else if (generationMode == "image") {
-    let {imageHeight,imageWidth}=generationSettings;
+    let {imageHeight,imageWidth,imagesCount}=generationSettings;
+    HTMLContent+="<div class='image-container'>";
+    for (let i=0;i < imagesCount;i++){
+    let seed=getRandomIntInclusive(0,2000);
     
-    HTMLContent="<div class='image-container'>";
-    for (let i = 0; i < generationSettings.imagesCount; i++) {
-      let seed=getRandomIntInclusive(0,2000);
-      HTMLContent+="<img src='http://pseudocontent.matthew-taormina.com/modules/place-holder-image/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
+    if (window.location.hostname == "localhost" || window.location.hostname == "127.0.0.1") {
+    HTMLContent+="<img src='http://localhost/Pseudocontent/modules/place-holder-image-2.0/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
     }
-    HTMLContent+="</div>";
+    else{
+      HTMLContent+="<img src='https://pseudocontent.matthew-taormina.com/modules/place-holder-image-2.0/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
+    }
+    
+  }
+  HTMLContent+="</div>";
   }
 
   // Inject content
