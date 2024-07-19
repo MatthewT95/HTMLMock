@@ -12,6 +12,8 @@ let generationSettings = {
   tableRowCount: 3,
   tableColumnCount: 3,
   tableHeadersOn: true,
+  imageWidth: 300,
+  imageHeight: 200,
 };
 let webPreviewMode = true;
 
@@ -43,6 +45,8 @@ let inputSentenceMinLength = document.querySelector(
 let inputSentenceMaxLength = document.querySelector(
   "#interface #numSentenceMaxLength"
 );
+let inputImageWidth = document.querySelector("#interface #numImageWidth");
+let inputImageHeight = document.querySelector("#interface #numImageHeight");
 let inputItemCount = document.querySelector("#interface #numItemCount");
 let inputHeaderLevel = document.querySelector("#interface #numHeaderLevel");
 let inputTblColumns = document.querySelector("#interface #numTblColumns");
@@ -69,6 +73,8 @@ function loadDefaultSettingsUI() {
     tableHeadersOn,
     itemCount,
     headerLevel,
+    imageWidth,
+    imageHeight
   } = generationSettings;
   // Load default settings into UI
   inputParagraphCount.value = paragraphCount;
@@ -82,6 +88,8 @@ function loadDefaultSettingsUI() {
   inputTblColumns.value = tableColumnCount;
   inputTblRows.value = tableRowCount;
   inputHeadersEnabled.checked = tableHeadersOn;
+  inputImageWidth.value = imageWidth;
+  inputImageHeight.value = imageHeight;
 }
 
 function detectSettingsFromUI() {
@@ -96,7 +104,10 @@ function detectSettingsFromUI() {
   generationSettings.tableColumnCount = inputTblColumns.value;
   generationSettings.tableRowCount = inputTblRows.value;
   generationSettings.tableHeadersOn = inputHeadersEnabled.checked;
+  generationSettings.imageWidth = inputImageWidth.value;
+  generationSettings.imageHeight = inputImageHeight.value;
 }
+
 function regenerateContent(mode = "u") {
   let webPreviewModeHistory = webPreviewMode;
   if (!webPreviewMode) {
@@ -173,6 +184,11 @@ function regenerateContent(mode = "u") {
   } // Table generation mode clause
   else if (generationMode == "table") {
     HTMLContent = generateFakeHTMLTable(generationSettings);
+  }
+  else if (generationMode == "image") {
+    let {imageHeight,imageWidth}=generationSettings;
+    let seed=getRandomIntInclusive(0,2000);
+    HTMLContent="<img src='http://localhost/Pseudocontent/Modules/PlaceHolderImage/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
   }
 
   // Inject content

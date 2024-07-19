@@ -192,6 +192,11 @@ body {
     display: flex
 }
 
+#interface[data-gen-mode="image"] :is(.imgWidth,
+    .imgHeight,
+    .imgCount) {
+    display: flex
+}
 .center {
     text-align: center;
 }

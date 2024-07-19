@@ -21,7 +21,8 @@
             <option value="normal">Normal</option>
             <option value="list">Lists</option>
             <option value="table">Table</option>
-            <option value="header">Headers</option>
+            <option value="header">Header</option>
+            <option value="image">Image</option>
             <option value="none">none</option>
         </select>
         <!-- Sub Generation Mode -->
@@ -82,6 +83,14 @@
             <div class="genSettingInput tableHeadersEnabled">
                 <label for="chkTableHeadersEnabled">Table Headers Enabled: </label>
                 <input type="checkbox" name="" id="chkTableHeadersEnabled"></input>
+            </div>
+            <div class="genSettingInput imgWidth">
+                <label for="numImageWidth">Image Width: </label>
+                <input type="number" name="" id="numImageWidth" min="100" max="1200" value="200" step="25"></input>
+            </div>
+            <div class="genSettingInput imgHeight">
+                <label for="numImageHeight">Image Height: </label>
+                <input type="number" name="" id="numImageHeight" min="100" max="1200" value="200" step="25"></input>
             </div>
         </div>
         <button id="btnToggleFormat" onclick="toggleFormat()">Show HTML</button>
