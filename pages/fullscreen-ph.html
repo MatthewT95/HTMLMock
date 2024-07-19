@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer>
+        function updateImage(){
+            let seed = 100;
+            let imageWidth = window.innerWidth;
+            let imageHeight = window.innerHeight;
+            let img = document.querySelector("#place-holder");
+            console.log(img)
+            if (window.location.hostname == "localhost" || window.location.hostname == "127.0.0.1") {
+                  img.src='http://localhost/Pseudocontent/modules/place-holder-image-2.0/?seed='+seed+'&width='+imageWidth+'&height='+imageHeight;
+            }
+            else{
+                img.src='http://pseudocontent.matthew-taormina.com/modules/place-holder-image-2.0/?seed='+seed+'&width='+imageWidth+'&height='+imageHeight;
+            }
+        }
+    </script>
+</head>
+<body>
+    <img id="place-holder" src="oko.jpg"/>
+    <script>
+    updateImage()
+    window.addEventListener("resize", updateImage);
+    </script>
+</body>
+</html>
