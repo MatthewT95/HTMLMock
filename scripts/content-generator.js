@@ -196,7 +196,7 @@ function regenerateContent(mode = "u") {
     HTMLContent="<div class='image-container'>";
     for (let i = 0; i < generationSettings.imagesCount; i++) {
       let seed=getRandomIntInclusive(0,2000);
-      HTMLContent+="<img src='../modules/place-holder-image/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
+      HTMLContent+="<img src='http://pseudocontent.matthew-taormina.com/modules/place-holder-image/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
     }
     HTMLContent+="</div>";
   }
