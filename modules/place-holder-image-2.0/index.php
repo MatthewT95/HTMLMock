@@ -12,7 +12,8 @@ if (!file_exists('./cache')) {
 
 // constants
 $MAX_CACHE_FILES = 50000;
-$MAX_ITERATIONS = 50;
+$MAX_ITERATIONS = 25;
+$MIN_ITERATIONS = 10;
 
 // get the seed, height and width from the request or set default values
 $seed = $_GET['seed'] ?? 1;
@@ -37,7 +38,7 @@ if (file_exists($cache_path)) {
 mt_srand(abs($seed));
 
 // generarte random number of iterations
-$iterations = mt_rand(5, $MAX_ITERATIONS);
+$iterations = mt_rand($MIN_ITERATIONS, $MAX_ITERATIONS);
 
 // create an array rectangles with dimensions and colors. 
 // The dimensions are based on the height and width of the image
