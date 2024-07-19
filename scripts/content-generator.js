@@ -188,7 +188,12 @@ function regenerateContent(mode = "u") {
   else if (generationMode == "image") {
     let {imageHeight,imageWidth}=generationSettings;
     let seed=getRandomIntInclusive(0,2000);
-    HTMLContent="<img src='http://localhost/Pseudocontent/Modules/PlaceHolderImage/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
+    if (window.location.hostname == "localhost" || window.location.hostname == "127.0.0.1") {
+    HTMLContent="<img src='http://localhost/Pseudocontent/modules/place-holder-image-2.0/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
+    }
+    else{
+      HTMLContent="<img src='https://pseudocontent.matthew-taormina.com/modules/place-holder-image-2.0/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
+    }
   }
 
   // Inject content
