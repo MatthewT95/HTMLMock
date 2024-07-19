@@ -200,7 +200,7 @@ function regenerateContent(mode = "u") {
     HTMLContent+="<img src='http://localhost/Pseudocontent/modules/place-holder-image-2.0/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
     }
     else{
-      HTMLContent+="<img src='https://pseudocontent.matthew-taormina.com/modules/place-holder-image-2.0/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
+      HTMLContent+="<img src='http://pseudocontent.matthew-taormina.com/modules/place-holder-image-2.0/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
     }
     
   }
