@@ -4,7 +4,7 @@
         $height = $_GET['height'] ?? 400;
         $width = $_GET['width'] ?? 600;
 
-        return [max(min($seed,3000),1), min(round($height / 25)  * 25,1200), min(round($width / 25) * 25,1200)];
+        return [abs($seed), min(round($height / 25)  * 25,1200), min(round($width / 25) * 25,1200)];
     }
 
     function validateGetRequest($seed, $height, $width) {
@@ -20,7 +20,7 @@
     }
     
     function generateLocation($seed, $height, $width, $xMin, $Max, $yMin, $yMax) {
-        srand($seed);
+        srand($seed % 500);
         $x = rand($xMin, $Max-$width);
         $y = rand($yMin, $yMax-$height);
 
@@ -28,9 +28,12 @@
     }
 
     $MAX_CACHE_FILES = 50000;
-    $sourceImagePath = "./source-image-2.png";
+    
     list($seed, $height, $width) = getValuesFromGetRequest();
     validateGetRequest($seed, $height, $width);
+    srand(floor($seed / 500));
+    $page = random_int(1,50);
+    $sourceImagePath = "./sourceImages/image-{$page}.png";
     list($sourceWidth, $sourceHeight) = getimagesize($sourceImagePath);
     $location = generateLocation($seed, $height, $width,0, $sourceWidth, 0, $sourceHeight);
 
