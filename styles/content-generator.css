@@ -231,3 +231,15 @@ td {
     border: 4px black solid;
     border-collapse: collapse;
 }
+
+#content .image-container {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#content .image-container img {
+    margin: 20px;
+}

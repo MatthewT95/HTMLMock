@@ -14,6 +14,7 @@ let generationSettings = {
   tableHeadersOn: true,
   imageWidth: 300,
   imageHeight: 200,
+  imagesCount:3
 };
 let webPreviewMode = true;
 
@@ -45,6 +46,7 @@ let inputSentenceMinLength = document.querySelector(
 let inputSentenceMaxLength = document.querySelector(
   "#interface #numSentenceMaxLength"
 );
+inputImageCount = document.querySelector("#interface #numImageCount");
 let inputImageWidth = document.querySelector("#interface #numImageWidth");
 let inputImageHeight = document.querySelector("#interface #numImageHeight");
 let inputItemCount = document.querySelector("#interface #numItemCount");
@@ -74,7 +76,8 @@ function loadDefaultSettingsUI() {
     itemCount,
     headerLevel,
     imageWidth,
-    imageHeight
+    imageHeight,
+    imagesCount
   } = generationSettings;
   // Load default settings into UI
   inputParagraphCount.value = paragraphCount;
@@ -90,6 +93,7 @@ function loadDefaultSettingsUI() {
   inputHeadersEnabled.checked = tableHeadersOn;
   inputImageWidth.value = imageWidth;
   inputImageHeight.value = imageHeight;
+  inputImageCount.value = imagesCount;
 }
 
 function detectSettingsFromUI() {
@@ -106,6 +110,7 @@ function detectSettingsFromUI() {
   generationSettings.tableHeadersOn = inputHeadersEnabled.checked;
   generationSettings.imageWidth = inputImageWidth.value;
   generationSettings.imageHeight = inputImageHeight.value;
+  generationSettings.imagesCount = inputImageCount.value;
 }
 
 function regenerateContent(mode = "u") {

@@ -1,2 +1,2 @@
 # Ignore cache folder
-cache/
+cache/*.png
