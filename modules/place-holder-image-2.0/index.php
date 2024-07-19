@@ -11,7 +11,7 @@ if (!file_exists('./cache')) {
 }
 
 // constants
-$MAX_CACHE_FILES = 50000;
+$MAX_CACHE_FILES = 500000;
 $MAX_ITERATIONS = 25;
 $MIN_ITERATIONS = 10;
 
