@@ -194,7 +194,7 @@ function regenerateContent(mode = "u") {
     let {imageHeight,imageWidth,imagesCount}=generationSettings;
     HTMLContent+="<div class='image-container'>";
     for (let i=0;i < imagesCount;i++){
-    let seed=getRandomIntInclusive(0,2000);
+    let seed=getRandomIntInclusive(0,50000);
     
     if (window.location.hostname == "localhost" || window.location.hostname == "127.0.0.1") {
     HTMLContent+="<img src='http://localhost/Pseudocontent/modules/place-holder-image-2.0/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
