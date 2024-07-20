@@ -4,6 +4,11 @@ body {
   margin: 0px;
 }
 
+#interface #linkHomePage {
+  grid-column: 4/5;
+  grid-row: 3/4
+}
+
 #content {
   font-size: 14pt;
   box-sizing: border-box;
