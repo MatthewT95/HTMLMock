@@ -1,0 +1,20 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #85c3be;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0a2200;
+}
+
+h1 {
+  width: 99vw;
+  margin: 0px auto;
+  color: #0e4607;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+#main {
+  width: 80vw;
+  margin: 0px auto;
+}
