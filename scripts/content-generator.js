@@ -190,59 +190,31 @@ function regenerateContent(mode = "u") {
   else if (generationMode == "table") {
     HTMLContent = generateFakeHTMLTable(generationSettings);
   } else if (generationMode == "image") {
+    let targetDomain = window.location.hostname;
     if (generationSubMode == "image-single") {
       let { imageWidth, imageHeight } = generationSettings;
       let seed = getRandomIntInclusive(0, 50000);
-      if (
-        window.location.hostname == "localhost" ||
-        window.location.hostname == "127.0.0.1"
-      ) {
-        HTMLContent =
-          "<img src='http://localhost/matthew-taormina.com/pseudocontent/modules/place-holder-image-2.0/?seed=" +
-          seed +
-          "&width=" +
-          imageWidth +
-          "&height=" +
-          imageHeight +
-          "'/>";
-      } else {
-        HTMLContent =
-          "<img src='http://pseudocontent.matthew-taormina.com/modules/place-holder-image-2.0/?seed=" +
-          seed +
-          "&width=" +
-          imageWidth +
-          "&height=" +
-          imageHeight +
-          "'/>";
-      }
+      HTMLContent =
+        "<img src='http://" + targetDomain + "/modules/place-holder-image-2.0/?seed=" +
+        seed +
+        "&width=" +
+        imageWidth +
+        "&height=" +
+        imageHeight +
+        "'/>";
     } else if (generationSubMode == "image-set") {
       let { imageHeight, imageWidth, imagesCount } = generationSettings;
       HTMLContent += "<div class='image-container'>";
       for (let i = 0; i < imagesCount; i++) {
         let seed = getRandomIntInclusive(0, 50000);
-
-        if (
-          window.location.hostname == "localhost" ||
-          window.location.hostname == "127.0.0.1"
-        ) {
-          HTMLContent +=
-            "<img src='http://localhost/matthew-taormina.com/pseudocontent/modules/place-holder-image-2.0/?seed=" +
-            seed +
-            "&width=" +
-            imageWidth +
-            "&height=" +
-            imageHeight +
-            "'/>";
-        } else {
-          HTMLContent +=
-            "<img src='http://pseudocontent.matthew-taormina.com/modules/place-holder-image-2.0/?seed=" +
-            seed +
-            "&width=" +
-            imageWidth +
-            "&height=" +
-            imageHeight +
-            "'/>";
-        }
+        HTMLContent +=
+          "<img src='http://" + targetDomain + "/modules/place-holder-image-2.0/?seed=" +
+          seed +
+          "&width=" +
+          imageWidth +
+          "&height=" +
+          imageHeight +
+          "'/>";
       }
       HTMLContent += "</div>";
     }
