@@ -192,11 +192,11 @@ function regenerateContent(mode = "u") {
   } else if (generationMode == "image") {
     if (generationSubMode == "image-single") {
       let { imageWidth, imageHeight } = generationSettings;
+      let seed = getRandomIntInclusive(0, 50000);
       if (
         window.location.hostname == "localhost" ||
         window.location.hostname == "127.0.0.1"
       ) {
-        let seed = getRandomIntInclusive(0, 50000);
         HTMLContent =
           "<img src='http://localhost/matthew-taormina.com/pseudocontent/modules/place-holder-image-2.0/?seed=" +
           seed +
@@ -244,8 +244,8 @@ function regenerateContent(mode = "u") {
             "'/>";
         }
       }
+      HTMLContent += "</div>";
     }
-    HTMLContent += "</div>";
   }
 
   // Inject content
