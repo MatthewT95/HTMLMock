@@ -326,6 +326,10 @@ td {
     grid-column: 1/2;
     grid-row: 3/4;
   }
+
+  #interface #linkHomePage {
+    grid-column: 3/4;
+  }
 }
 
 @media (max-width: 650px) {
