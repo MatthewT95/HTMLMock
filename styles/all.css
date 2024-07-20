@@ -18,6 +18,11 @@ h1 {
   width: 80vw;
   margin: 0px auto;
 }
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 40px;
+  }
+}
 
 @media screen and (max-width: 600px) {
   h1 {
