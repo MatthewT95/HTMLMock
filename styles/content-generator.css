@@ -18,23 +18,23 @@ body {
 }
 
 #content.lightMode {
-    background-color: white;
+    background-color: #B0D0D3;
     color: black;
 }
 
 #interface {
     height: 200px;
     width: 100vw;
-    color: white;
+    color: black;
     box-sizing: border-box;
     font-size: 10pt;
-    background-color: darkblue;
+    background-color: #84BF24;
     display: grid;
-    grid-template-columns: 130px 200px 800px 1fr 150px;
+    grid-template-columns: 130px 200px 1fr 150px;
     grid-template-rows: repeat(3, 1fr);
     padding: 10px;
     column-gap: 5px;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 #interface #btnRegenerate,
@@ -61,12 +61,12 @@ body {
 }
 
 #interface #btnToggleFormat {
-    grid-column: 12/13;
+    grid-column: 4/5;
     grid-row: 1/2;
 }
 
 #interface #btnToggleTheme {
-    grid-column: 12/13;
+    grid-column: 4/5;
     grid-row: 2/3;
 }
 
@@ -117,25 +117,30 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border: lightgreen 3px solid;
+    border: hsl(7, 91%, 50%) 3px solid;
     border-radius: 6px;
 }
 
 #interface .genSettingInput {
     width: 300px;
-    height: 25%;
+    height: 30%;
     display: none;
     flex-direction: row;
     align-items: center;
-    font-size: 100%;
 }
 
 #interface .genSettingInput>label {
     width: 66%;
+    height: 60%;
+    font-size: 1.25em;
 }
 #interface .genSettingInput>input 
 {
     width: 33%;
+    height: 60%;
+    font-size: 1.25em;
+    box-sizing: border-box;
+    padding: 3px;
 }
 
 #interface #generationSettings>h2 {
@@ -205,11 +210,13 @@ body {
     background-color: white;
     border: white solid 5px;
     margin: 5px;
+    box-sizing: border-box;
 }
 
 #interface button:hover {
     background-color: black;
     color: white;
+    font-weight: bold;
 }
 
 .hidden {
@@ -242,4 +249,80 @@ td {
 
 #content .image-container img {
     margin: 20px;
+}
+
+@media (max-width: 1600px) {
+    #content {
+        height: calc(100vh - 300px);
+    }
+
+    #interface {
+        height: 300px;
+    }
+
+    #interface .genSettingInput {
+        width: 300px;
+        height: 15%;
+    }
+}
+
+@media (max-width: 1200px) {
+    #content {
+        font-size: 12pt;
+        width: 100vw;
+        margin: auto;
+        margin-top: none;
+        height: calc(100vh - 350px);
+    }
+
+    #interface {
+        height: 350px;
+        grid-template-rows: repeat(6,1fr);
+        grid-template-columns: 160px 1fr 150px;
+    }
+
+    #interface #generationSettings {
+        grid-row: 1/7;
+        grid-column: 2/3;
+    }
+
+    #interface :is(#btnToggleFormat,#btnToggleTheme) {
+        grid-column: 3/4;
+    }
+
+    #interface .genSettingInput {
+        width: 300px;
+        height: 12%;
+    }
+
+    #interface #btnRegenerate {
+        grid-column: 1 /2;
+        grid-row: 4 / 5;
+    }
+    
+    #interface #btnAppend {
+        grid-column: 1 /2;
+        grid-row: 5 / 6;
+    }
+    
+    #interface #btnPrepend {
+        grid-column: 1 / 2;
+        grid-row: 6 / 7;
+    }
+
+    #interface #lblGenerationMode {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        text-align: center;
+    }
+
+    #interface #selGenerationMode {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    
+    #interface #divGenerationSubMode {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
 }
