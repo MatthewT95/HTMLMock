@@ -12,7 +12,6 @@
   width: 99vw;
   background-color: #169ef9;
   align-items: center;
-  border: hsl(204, 95%, 24%) solid;
   margin: 0px auto;
 }
 
@@ -34,7 +33,6 @@
   background-color: #169ef9;
   width: 100%;
   height: 100%;
-  border: hsl(204, 95%, 24%) solid;
   padding: 0px 8px;
   border-width: 0px 2px;
 }
@@ -42,4 +40,13 @@
 #nav a:hover {
   background-color: hsl(204, 95%, 24%);
   color: white;
+}
+
+@media screen and (max-width: 600px) {
+  #nav {
+    flex-direction: column;
+  }
+  #nav li {
+    min-width: 100%;
+  }
 }
