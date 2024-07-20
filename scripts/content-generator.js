@@ -14,7 +14,7 @@ let generationSettings = {
   tableHeadersOn: true,
   imageWidth: 300,
   imageHeight: 200,
-  imagesCount:3
+  imagesCount: 3,
 };
 let webPreviewMode = true;
 
@@ -77,7 +77,7 @@ function loadDefaultSettingsUI() {
     headerLevel,
     imageWidth,
     imageHeight,
-    imagesCount
+    imagesCount,
   } = generationSettings;
   // Load default settings into UI
   inputParagraphCount.value = paragraphCount;
@@ -189,22 +189,63 @@ function regenerateContent(mode = "u") {
   } // Table generation mode clause
   else if (generationMode == "table") {
     HTMLContent = generateFakeHTMLTable(generationSettings);
-  }
-  else if (generationMode == "image") {
-    let {imageHeight,imageWidth,imagesCount}=generationSettings;
-    HTMLContent+="<div class='image-container'>";
-    for (let i=0;i < imagesCount;i++){
-    let seed=getRandomIntInclusive(0,50000);
-    
-    if (window.location.hostname == "localhost" || window.location.hostname == "127.0.0.1") {
-    HTMLContent+="<img src='http://localhost/Pseudocontent/modules/place-holder-image-2.0/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
+  } else if (generationMode == "image") {
+    if (generationSubMode == "image-single") {
+      let { imageWidth, imageHeight } = generationSettings;
+      if (
+        window.location.hostname == "localhost" ||
+        window.location.hostname == "127.0.0.1"
+      ) {
+        let seed = getRandomIntInclusive(0, 50000);
+        HTMLContent =
+          "<img src='http://localhost/matthew-taormina.com/pseudocontent/modules/place-holder-image-2.0/?seed=" +
+          seed +
+          "&width=" +
+          imageWidth +
+          "&height=" +
+          imageHeight +
+          "'/>";
+      } else {
+        HTMLContent =
+          "<img src='http://pseudocontent.matthew-taormina.com/modules/place-holder-image-2.0/?seed=" +
+          seed +
+          "&width=" +
+          imageWidth +
+          "&height=" +
+          imageHeight +
+          "'/>";
+      }
+    } else if (generationSubMode == "image-set") {
+      let { imageHeight, imageWidth, imagesCount } = generationSettings;
+      HTMLContent += "<div class='image-container'>";
+      for (let i = 0; i < imagesCount; i++) {
+        let seed = getRandomIntInclusive(0, 50000);
+
+        if (
+          window.location.hostname == "localhost" ||
+          window.location.hostname == "127.0.0.1"
+        ) {
+          HTMLContent +=
+            "<img src='http://localhost/matthew-taormina.com/pseudocontent/modules/place-holder-image-2.0/?seed=" +
+            seed +
+            "&width=" +
+            imageWidth +
+            "&height=" +
+            imageHeight +
+            "'/>";
+        } else {
+          HTMLContent +=
+            "<img src='http://pseudocontent.matthew-taormina.com/modules/place-holder-image-2.0/?seed=" +
+            seed +
+            "&width=" +
+            imageWidth +
+            "&height=" +
+            imageHeight +
+            "'/>";
+        }
+      }
     }
-    else{
-      HTMLContent+="<img src='http://pseudocontent.matthew-taormina.com/modules/place-holder-image-2.0/?seed="+seed+"&width="+imageWidth+"&height="+imageHeight+"'/>";
-    }
-    
-  }
-  HTMLContent+="</div>";
+    HTMLContent += "</div>";
   }
 
   // Inject content
@@ -260,6 +301,10 @@ selGenerationMode.addEventListener("change", () => {
   } else if (generationMode == "list") {
     generationSubMode = document.querySelector(
       query + " #selListSubMode"
+    ).value;
+  } else if (generationMode == "image") {
+    generationSubMode = document.querySelector(
+      query + " #selImageSubMode"
     ).value;
   } else {
     generationSubMode = "";
