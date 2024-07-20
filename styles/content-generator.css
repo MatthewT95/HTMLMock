@@ -7,7 +7,8 @@ body {
 #interface #linkHomePage {
   grid-column: 4/5;
   grid-row: 3/4;
-  font-size: 16pt;
+  font-size: 80%;
+  display: block;
 }
 
 #content {
