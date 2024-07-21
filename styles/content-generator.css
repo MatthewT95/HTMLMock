@@ -89,30 +89,14 @@ body {
   grid-row: 2/3;
 }
 
-#interface #divGenerationSubMode {
+#interface #selGenerationMode {
   grid-column: 2/3;
   grid-row: 3/4;
 }
 
-#interface #divGenerationSubMode select {
-  height: 100%;
-  width: 100%;
-}
-
-#interface #divGenerationSubMode select {
-  display: none;
-}
-
-#interface[data-gen-mode="normal"] #selNormalSubMode {
-  display: block;
-}
-
-#interface[data-gen-mode="list"] #selListSubMode {
-  display: block;
-}
-
-#interface[data-gen-mode="image"] #selImageSubMode {
-  display: block;
+#interface #selGenerationSubMode {
+  grid-column: 2/3;
+  grid-row: 3/4;
 }
 
 #interface #generationSettings {
@@ -133,12 +117,13 @@ body {
   align-items: center;
 }
 
-#interface .genSettingInput > label {
+#interface .genSettingInput>label {
   width: 66%;
   height: 60%;
   font-size: 1.25em;
 }
-#interface .genSettingInput > input {
+
+#interface .genSettingInput>input {
   width: 33%;
   height: 60%;
   font-size: 1.25em;
@@ -146,7 +131,7 @@ body {
   padding: 3px;
 }
 
-#interface #generationSettings > h2 {
+#interface #generationSettings>h2 {
   width: 300px;
   font-size: 16pt;
   padding: 0px;
@@ -155,29 +140,21 @@ body {
 }
 
 /* Generation Settings UI */
-#interface[data-gen-mode="normal"][data-gen-sub-mode="paragraphs"]
-  :is(.paraCount, .paraMinLen, .paraMaxLen, .senMinLen, .senMaxLen) {
+#interface[data-gen-mode="normal"][data-gen-sub-mode="paragraphs"] :is(.paraCount, .paraMinLen, .paraMaxLen, .senMinLen, .senMaxLen) {
   display: flex;
 }
 
-#interface[data-gen-mode="normal"][data-gen-sub-mode="sentences"]
-  :is(.senCount, .senMinLen, .senMaxLen) {
+#interface[data-gen-mode="normal"][data-gen-sub-mode="sentences"] :is(.senCount, .senMinLen, .senMaxLen) {
   display: flex;
 }
 
-:is(
-    #interface[data-gen-mode="list"][data-gen-sub-mode="ol-p"],
-    #interface[data-gen-mode="list"][data-gen-sub-mode="ul-p"]
-  )
-  :is(.senMinLen, .senMaxLen, .paraMinLen, .paraMaxLen, .itemCount) {
+:is(#interface[data-gen-mode="list"][data-gen-sub-mode="ol-p"],
+  #interface[data-gen-mode="list"][data-gen-sub-mode="ul-p"]) :is(.senMinLen, .senMaxLen, .paraMinLen, .paraMaxLen, .itemCount) {
   display: flex;
 }
 
-:is(
-    #interface[data-gen-mode="list"][data-gen-sub-mode="ol-s"],
-    #interface[data-gen-mode="list"][data-gen-sub-mode="ul-s"]
-  )
-  :is(.senMinLen, .senMaxLen, .itemCount) {
+:is(#interface[data-gen-mode="list"][data-gen-sub-mode="ol-s"],
+  #interface[data-gen-mode="list"][data-gen-sub-mode="ul-s"]) :is(.senMinLen, .senMaxLen, .itemCount) {
   display: flex;
 }
 
@@ -185,17 +162,14 @@ body {
   display: flex;
 }
 
-#interface[data-gen-mode="table"]
-  :is(
-    .senMinLen,
-    .senMaxLen,
-    .paraMinLen,
-    .paraMaxLen,
-    .tblRowCount,
-    .tblColumnCount,
-    .tblHeadersOn,
-    .tableHeadersEnabled
-  ) {
+#interface[data-gen-mode="table"] :is(.senMinLen,
+  .senMaxLen,
+  .paraMinLen,
+  .paraMaxLen,
+  .tblRowCount,
+  .tblColumnCount,
+  .tblHeadersOn,
+  .tableHeadersEnabled) {
   display: flex;
 }
 
@@ -323,7 +297,7 @@ td {
     grid-row: 2/3;
   }
 
-  #interface #divGenerationSubMode {
+  #interface #selGenerationMode {
     grid-column: 1/2;
     grid-row: 3/4;
   }
@@ -337,6 +311,7 @@ td {
     padding-left: 5%;
     padding-right: 5%;
   }
+
   #content {
     height: auto;
     min-height: 75vh;

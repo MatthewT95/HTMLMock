@@ -261,36 +261,6 @@ function toggleFormat() {
   }
 }
 
-// Event listeners
-selGenerationMode.addEventListener("change", () => {
-  generationMode = selGenerationMode.value;
-  interface.dataset.genMode = selGenerationMode.value;
-  let query = "#interface #divGenerationSubMode";
-  if (generationMode == "normal") {
-    generationSubMode = document.querySelector(
-      query + " #selNormalSubMode"
-    ).value;
-  } else if (generationMode == "list") {
-    generationSubMode = document.querySelector(
-      query + " #selListSubMode"
-    ).value;
-  } else if (generationMode == "image") {
-    generationSubMode = document.querySelector(
-      query + " #selImageSubMode"
-    ).value;
-  } else {
-    generationSubMode = "";
-  }
-  interface.dataset.genSubMode = generationSubMode;
-});
-
-subModesSelects.forEach((subModeSelect) => {
-  subModeSelect.addEventListener("change", (e) => {
-    generationSubMode = e.target.value;
-    interface.dataset.genSubMode = e.target.value;
-  });
-});
-
 btnRegenerate.addEventListener("click", () => regenerateContent("u"));
 btnAppend.addEventListener("click", () => regenerateContent("a"));
 btnPrepend.addEventListener("click", () => regenerateContent("p"));

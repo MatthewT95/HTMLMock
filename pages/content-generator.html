@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML content generator</title>
     <link rel="stylesheet" href="../styles/content-generator.css">
+    <link rel="stylesheet" href="../styles/multilevel-select.css">
     <script src="../scripts/FakeText.js"></script>
     <script src="../scripts/FakeHTML.js"></script>
     <script defer src="../scripts/content-generator.js"></script>
+    <script defer src="../scripts/multilevel-select.js"></script>
 </head>
+
 <body>
-    <div id="interface" data-gen-mode="normal" data-gen-sub-mode="paragraphs">
+    <div id="interface">
         <!-- Generation Buttons -->
         <button id="btnRegenerate">Regenerate</button>
         <button id="btnAppend">Append</button>
         <button id="btnPrepend">Prepend</button>
         <!-- Generation Mode -->
         <label id="lblGenerationMode" for="selGenerationMode">Generation Mode: </label>
-        <select id="selGenerationMode">
+        <select id="selGenerationMode" class="ml-sel-parent">
             <option value="normal">Normal</option>
             <option value="list">Lists</option>
             <option value="table">Table</option>
@@ -26,22 +30,16 @@
             <option value="none">none</option>
         </select>
         <!-- Sub Generation Mode -->
-        <div id="divGenerationSubMode">
-            <select id="selNormalSubMode">
-                <option checked value="paragraphs">Paragraphs</option>
-                <option value="sentences">Sentences</option>
-            </select>
-            <select id="selListSubMode">
-                <option checked value="ol-s">Ordered List (s)</option>
-                <option value="ul-s">Unordered List (s)</option>
-                <option value="ol-p">Ordered List (p)</option>
-                <option value="ul-p">Unordered List (p)</option>
-            </select>
-            <select id="selImageSubMode">
-                <option checked value="image-single">Single Image</option>
-                <option value="image-set">Image Set</option>
-            </select>
-        </div>
+        <select id="selGenerationSubMode" class="ml-sel-collapse">
+            <option data-filter-value="normal" value="paragraphs">Paragraphs</option>
+            <option data-filter-value="normal" value="sentences">Sentences</option>
+            <option data-filter-value="list" value="ol-s">Ordered List (s)</option>
+            <option data-filter-value="list" value="ul-s">Unordered List (s)</option>
+            <option data-filter-value="list" value="ol-p">Ordered List (p)</option>
+            <option data-filter-value="list" value="ul-p">Unordered List (p)</option>
+            <option data-filter-value="image" value="image-single">Single Image</option>
+            <option data-filter-value="image" value="image-set">Image Set</option>
+        </select>
         <div id="generationSettings">
             <h2>Generation Settings</h2>
             <div class="genSettingInput paraCount">
@@ -105,7 +103,7 @@
         <button id="btnToggleTheme" onclick="toggleLightMode()">Toggle theme</button>
     </div>
     <div id="content">
-        
+
     </div>
 </body>
 
