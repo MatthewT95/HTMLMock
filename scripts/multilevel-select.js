@@ -10,6 +10,10 @@ document.querySelectorAll("select.ml-sel-parent").forEach((element) => {
     })
 })
 
+document.querySelectorAll("select.ml-sel-collapse").forEach((element) => {
+    element.value = "";
+})
+
 function nextSelectSibling(element) {
     let nextSibling = element.nextElementSibling
     let steps = 0;
