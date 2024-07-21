@@ -306,7 +306,7 @@ td {
     grid-row: 2/3;
   }
 
-  #interface #divGenerationSubMode {
+  #interface #selGenerationSubMode {
     grid-column: 1/2;
     grid-row: 3/4;
   }
