@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../styles/nav.css">
     <link rel="stylesheet" href="../styles/multilevel-select.css">
     <link rel="stylesheet" href="../styles/documentation.css">
+    <script defer src="../scripts/multilevel-select.js"></script>
     <title>Documentation</title>
 </head>
 
@@ -63,13 +64,13 @@
             The sentences will be a random number of words between sentence min and max lengths.
         </p>
         <h5>Settings</h5>
-        <ol>
+        <ul>
             <li>Paragraph count</li>
             <li>Paragraph min length</li>
             <li>Paragraph max length</li>
             <li>Sentence min length</li>
             <li>Sentence max length</li>
-        </ol>
+        </ul>
         <h5>Sample</h5>
         <div>
             <p>Iuenetvu maolsnr oi liystzrg rntese kitoee nrzt uatln wfiew. Ososcbitrra iael tmeo ycvee ewycdtem
@@ -108,11 +109,11 @@
             The sentences will be a random number of words between sentence min and max lengths.
         </p>
         <h5>Settings</h5>
-        <ol>
+        <ul>
             <li>Sentence count</li>
             <li>Sentence min length</li>
             <li>Sentence max length</li>
-        </ol>
+        </ul>
         <h5>Sample</h5>
         <div>
             <p>Ruaspsl hrmdhse aaseolon ipuea plrdenesp asaoasgsn syosgr ibaegc espnv k dshvtaaoi rlt redhrm. Iaysi
@@ -123,20 +124,174 @@
         </div>
         <h3>List</h3>
         <p>
-
+            This mode allows the user to generate a list of items. The list can be made up of Sentences
+            or paragraphs. The list can be both an unorder and ordered list.
         </p>
-        <h3>Table</h3>
+        <h4>Ordered list of sentences</h4>
         <p>
-
+            This mode produces a ordered list of sentences. The sentences will be a
+            random number of words between sentence min and max lengths. It will make as
+            many items as the user specified in item count setting.
         </p>
-        <h3>Header</h3>
+        <h5>Settings</h5>
+        <ul>
+            <li>Sentence min length</li>
+            <li>Sentence max length</li>
+            <li>Item count</li>
+        </ul>
+        <h5>Sample</h5>
+        <div>
+            <ol>
+                <li>Nrgbepi egaronff at nptc ecdee get eilmd pilri ainisccts mtliach. </li>
+                <li>Vigx nrgbepi ndu linlicee spiaes owino ncdshs odohii mzsaru ti stbipk. </li>
+                <li>Mtliach oetdtar lu ifa ype e. </li>
+                <li>Inties fdlmnc eioc mtmadw oslroye ise ecdee vtisp bge sssyseti elcr. </li>
+                <li>Bhihss innzeemd tlascavk dimrfha awvasic uoaodzcr shils. </li>
+                <li>Toa ffinr negr uisml ype drkdp. </li>
+                <li>Nrgbepi nisu i tsrli hiaee adpi uliupiib tlascavk yelros reo. </li>
+                <li>Anes iol ger iiiaia rteernp psesona. </li>
+                <li>Sd laevc lss tlascavk iptt htoeyra esas rlnzep eotre saye l. </li>
+                <li>Zatgu ei rydu rgaosc ti ea ltamyun jrsts raartr phci. </li>
+            </ol>
+        </div>
+        <h4>Unordered list of sentences</h4>
         <p>
-
+            This mode produces a unordered list of sentences. The sentences will be a
+            random number of words between sentence min and max lengths. It will make as
+            many items as the user specified in item count setting.
         </p>
-        <h3>Image</h3>
+        <h5>Settings</h5>
+        <ul>
+            <li>Sentence min length</li>
+            <li>Sentence max length</li>
+            <li>Item count</li>
+        </ul>
+        <h5>Sample</h5>
+        <div>
+            <ul>
+                <li>Noeatd tcioa ectsennc tnsou eetanne ssno stvtaerso anes. </li>
+                <li>Ftreaoe iyg ntt psr psn isrroc ijhs tcioa cpnalm. </li>
+                <li>Alrgarw siorro mbgh ucysiu fta msn. </li>
+                <li>Mnpdio ijhs anei ta cns aeqnct lfitcbrp. </li>
+                <li>Brlaean anf atmietp laa eioc nnpr ise durar pnue gmaacir aplbh. </li>
+                <li>Oasfadhl ncdshs lrlei anf lpocici lm. </li>
+                <li>Hnofn lss phci sc edimts bcsi siorro. </li>
+                <li>Lm pilri tikf ubagta shils esas regvsoee o bstf ei ptinrs. </li>
+                <li>Taal tn bmmin lpocici itotsol creiss screi tse nolfo. </li>
+                <li>Oxalsl tibsse eecix uisml ps anwl lpocici. </li>
+            </ul>
+        </div>
+        <h4>Ordered list of paragraphs</h4>
         <p>
-
+            This mode produces a ordered list of paragraphs. The paragraphs will be
+            a random number of sentences from paragraph min to max length. The sentences will be a
+            random number of words between sentence min and max lengths. It will make as
+            many items as the user specified in item count setting.
         </p>
+        <h5>Settings</h5>
+        <ul>
+            <li>Paragraph min length</li>
+            <li>Paragraph max length</li>
+            <li>Sentence min length</li>
+            <li>Sentence max length</li>
+            <li>Item count</li>
+        </ul>
+        <h5>Sample</h5>
+        <div>
+            <ol>
+                <li>
+                    <p>Nirtns oisnrs soao iol lms oasfadhl. Nss bge orcou dnowltct bac lrkyi ntt. Nosc ecdee ra reo gnea
+                        oil n gner. Ectsennc vtisp ieoinpg iaitieu uv htfswi emi a lnsleegc nzcs. </p>
+                </li>
+                <li>
+                    <p>Rteernp irgdetam rcmggt a l teoberotl hfsewba. Dttsienisrr arlud sinice ti bassnun noaa. Naoimsl
+                        glemip rrtije ridciz fcdwdb ieaego jrsts eotre surr pilri geg. Taneoxfns piiaz t swu snov vedep
+                        nfcl oslroye uliupiib nnpr. </p>
+                </li>
+                <li>
+                    <p>Etuo our oshcuna orse aaasdeg mows ae aeqnct. Ortrngr odohii nfcl rins doi featu trcd saacu bs
+                        ldmg cptstna. Uatl dsi ra ive mnpdio ieoinpg pgtsr a notrrr. Llytsso ean teouse ncdshs utsm
+                        yebgnis lehrm iyg. Ps aubhen coi gtena ra a nstias. </p>
+                </li>
+                <li>
+                    <p>Eanoo sonbnd fusimpuiea srftjo ltitrs peiedo lrlei p. I agflc iyg uliupiib enctl vneae orrha civr
+                        lms. Bmmin i ioec edngpe pebud oengeamd rlnzep oo ype leusoopl mhatis. Tpse aaasdeg telga a
+                        ocfniortn eelti iua uietkrca rartol oltid tsercf. Itpf serlse ilaic gnnlhoeh nptc edrwl.
+                        Guttinda til nngcti bac pnin enseiyseote ikssat msslsn hes. </p>
+                </li>
+            </ol>
+        </div>
+        <h4>Unordered list of paragraphs</h4>
+        <p>
+            This mode produces a unordered list of paragraphs. The paragraphs will be
+            a random number of sentences from paragraph min to max length. The sentences will be a
+            random number of words between sentence min and max lengths. It will make as
+            many items as the user specified in item count setting.
+        </p>
+        <h5>Settings</h5>
+        <ul>
+            <li>Paragraph min length</li>
+            <li>Paragraph max length</li>
+            <li>Sentence min length</li>
+            <li>Sentence max length</li>
+            <li>Item count</li>
+        </ul>
+        <h5>Sample</h5>
+        <div>
+            <ul>
+                <li>
+                    <p>Ijhs yzua lsg cicrs era tikf doi ynsdhweor tiila cppi edoow. Irgdetam s i ligiaivr dnowltct o.
+                        Ttwti epredeser tl scl otohc ibrohss liaesli xnrcgpta eeihbnie. Iol ta gnea rnsvuo tsna ieoinpg
+                        ovsnksn iiycaiar. Zatgu cicrs pfeto rcjr gteldteem uawht knrysce ovsnksn. Mnsagei ynsdhweor
+                        enseiyseote anes tpse eyti eeniue tlascavk wtiay iiupiar. Llu iyg sd ifrlen bcsi eanto ynsdhweor
+                        ceonferr guttinda. Auri geg at galriym nosc ecdtla ncdshs ynsdhweor yaoeter oails teouse. </p>
+                </li>
+                <li>
+                    <p>Yslto otohc mef slio eplrd rnrm n iyg edrtg atnya. Pnt ioec hdsa rsid ieryv tl. Eiut ntt iy
+                        rnlshz brlaean tatrni gnnaci. Ldaa lrol n iosers d tlascavk okde. </p>
+                </li>
+                <li>
+                    <p>Oebassu s hnofn glsuen rela gnnaci dmemki cpea. Rartol edimts apdaeie eeihbnie tlascavk sedw
+                        rdiitstv dimrfha eusu nhazb. Mierk llytsso egesgha rlys rydu aris drkdp oltid rcjr ndnriah.
+                        Tjlumea nnrovld atuttur rtqeg comtabl psesona ijhs ooee bassnun fdlmnc. </p>
+                </li>
+                <li>
+                    <p>Aibabysc usere nnc rdpeisoceu bwennu awvasic. Iyg piri tibsse espebi fta lulir e lm bassnun taal.
+                        Mlam lrkyi ntt ieeu ig hoecusutioog. Okde ieaego drmcegvlaa rs odoaasn doi ortrngr aeqnct serlse
+                        spiaes eoatsimv. Edoow bge agflc ae ucrs etco dhss tuse mainh eusu. Tse ieryv ifrlen gnurr lms
+                        epee mlnilp. Yelros smeru secrt tkdrhtr csclneie cehsis teouse mnnsbe aii dyho cusii. </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="documentation">
+        <div class="doc-nav">
+            <select id="doc-nav-l1" class="ml-sel-parent">
+                <option value="UI">User Interface</option>
+                <option value="GenModes">Generation Modes</option>
+                <option value="GenSettings">Generation settings</option>
+            </select>
+            <select id="doc-nav-l2" class="ml-sel-collapse ml-sel-parent">
+                <option data-filter-value="GenModes" value="normal">Normal</option>
+                <option data-filter-value="GenModes" value="list">List</option>
+                <option data-filter-value="GenModes" value="table">Table</option>
+                <option data-filter-value="GenModes" value="header">Header</option>
+                <option data-filter-value="GenModes" value="image">Image</option>
+            </select>
+            <select id="doc-nav-l3" class="ml-sel-collapse">
+                <option data-filter-value="normal" value="Paragraph">Paragraph</option>
+                <option data-filter-value="normal" value="Sentence">Sentence</option>
+                <option data-filter-value="list" value="ol-s">Order list (s)</option>
+                <option data-filter-value="list" value="ul-s">Unorder lists (s)</option>
+                <option data-filter-value="list" value="ol-p">Order list (p)</option>
+                <option data-filter-value="list" value="ul-p">Unorder lists (p)</option>
+                <option data-filter-value="image" value="image-single">Image single</option>
+                <option data-filter-value="image" value="image-set">Image set</option>
+            </select>
+        </div>
+        <section class="user-interface">
+
+        </section>
     </div>
 </body>
 
