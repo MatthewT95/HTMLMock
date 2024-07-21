@@ -98,30 +98,14 @@ body {
   grid-row: 2/3;
 }
 
-#interface #divGenerationSubMode {
+#interface #selGenerationMode {
   grid-column: 2/3;
   grid-row: 3/4;
 }
 
-#interface #divGenerationSubMode select {
-  height: 100%;
-  width: 100%;
-}
-
-#interface #divGenerationSubMode select {
-  display: none;
-}
-
-#interface[data-gen-mode="normal"] #selNormalSubMode {
-  display: block;
-}
-
-#interface[data-gen-mode="list"] #selListSubMode {
-  display: block;
-}
-
-#interface[data-gen-mode="image"] #selImageSubMode {
-  display: block;
+#interface #selGenerationSubMode {
+  grid-column: 2/3;
+  grid-row: 3/4;
 }
 
 #interface #generationSettings {
@@ -322,7 +306,7 @@ td {
     grid-row: 2/3;
   }
 
-  #interface #divGenerationSubMode {
+  #interface #selGenerationMode {
     grid-column: 1/2;
     grid-row: 3/4;
   }
