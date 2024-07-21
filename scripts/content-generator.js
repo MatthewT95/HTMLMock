@@ -1,6 +1,6 @@
-let generationMode = "normal";
-let generationSubMode = "paragraphs";
 let generationSettings = {
+  primarlyMode: "normal",
+  secondaryMode: "paragraphs",
   sentenceCount: 5,
   paragraphCount: 3,
   paragraphMinLength: 4,
@@ -25,7 +25,7 @@ let btnRegenerate = document.getElementById("btnRegenerate");
 let btnAppend = document.getElementById("btnAppend");
 let btnPrepend = document.getElementById("btnPrepend");
 let selGenerationMode = document.getElementById("selGenerationMode");
-let divGenerationMode = document.getElementById("divGenerationSubMode");
+let selGenerationSubMode = document.getElementById("selGenerationSubMode");
 let subModesSelects = document.querySelectorAll(
   "#interface #divGenerationSubMode select"
 );
@@ -64,6 +64,8 @@ function toggleLightMode() {
 
 function loadDefaultSettingsUI() {
   let {
+    primarlyMode,
+    secondaryMode: SecondaryMode,
     paragraphCount,
     sentenceCount,
     paragraphMinLength,
@@ -94,6 +96,8 @@ function loadDefaultSettingsUI() {
   inputImageWidth.value = imageWidth;
   inputImageHeight.value = imageHeight;
   inputImageCount.value = imagesCount;
+  selGenerationMode.value = primarlyMode;
+  selGenerationSubMode.value = SecondaryMode;
 }
 
 function detectSettingsFromUI() {
@@ -111,10 +115,15 @@ function detectSettingsFromUI() {
   generationSettings.imageWidth = inputImageWidth.value;
   generationSettings.imageHeight = inputImageHeight.value;
   generationSettings.imagesCount = inputImageCount.value;
+  generationSettings.primarlyMode = selGenerationMode.value;
+  generationSettings.secondaryMode = selGenerationSubMode.value;
+  interface.dataset.genMode = generationSettings.primarlyMode;
+  interface.dataset.genSubMode = generationSettings.secondaryMode;
 }
 
 function regenerateContent(mode = "u") {
   let webPreviewModeHistory = webPreviewMode;
+  let { primarlyMode, secondaryMode: SecondaryMode } = generationSettings;
   if (!webPreviewMode) {
     toggleFormat();
   }
@@ -122,8 +131,8 @@ function regenerateContent(mode = "u") {
   let HTMLContent = "";
 
   // Normal generation mode clause
-  if (generationMode == "normal") {
-    if (generationSubMode == "paragraphs") {
+  if (primarlyMode == "normal") {
+    if (SecondaryMode == "paragraphs") {
       let { paragraphCount } = generationSettings;
       HTMLContent = generateFakeHTMLContent(
         [paragraphCount],
@@ -131,7 +140,7 @@ function regenerateContent(mode = "u") {
         [{ inner: "p" }],
         generationSettings
       );
-    } else if (generationSubMode == "sentences") {
+    } else if (SecondaryMode == "sentences") {
       let { sentenceCount } = generationSettings;
       HTMLContent = generateFakeHTMLContent(
         [1, sentenceCount],
@@ -142,8 +151,8 @@ function regenerateContent(mode = "u") {
     }
   }
   // List generation mode clause
-  else if (generationMode == "list") {
-    if (generationSubMode == "ol-s") {
+  else if (primarlyMode == "list") {
+    if (SecondaryMode == "ol-s") {
       let { itemCount } = generationSettings;
       HTMLContent = generateFakeHTMLContent(
         [1, itemCount],
@@ -151,7 +160,7 @@ function regenerateContent(mode = "u") {
         [{}, { inner: "s" }],
         generationSettings
       );
-    } else if (generationSubMode == "ul-s") {
+    } else if (SecondaryMode == "ul-s") {
       let { itemCount } = generationSettings;
       HTMLContent = generateFakeHTMLContent(
         [1, itemCount],
@@ -159,7 +168,7 @@ function regenerateContent(mode = "u") {
         [{}, { inner: "s" }],
         generationSettings
       );
-    } else if (generationSubMode == "ol-p") {
+    } else if (SecondaryMode == "ol-p") {
       let { itemCount } = generationSettings;
       HTMLContent = generateFakeHTMLContent(
         [1, itemCount],
@@ -167,7 +176,7 @@ function regenerateContent(mode = "u") {
         [{}, { inner: "p" }],
         generationSettings
       );
-    } else if (generationSubMode == "ul-p") {
+    } else if (SecondaryMode == "ul-p") {
       let { itemCount } = generationSettings;
       HTMLContent = generateFakeHTMLContent(
         [1, itemCount],
@@ -178,7 +187,7 @@ function regenerateContent(mode = "u") {
     }
   }
   // Header generation mode clause
-  else if (generationMode == "header") {
+  else if (primarlyMode == "header") {
     let { headerLevel } = generationSettings;
     HTMLContent = generateFakeHTMLContent(
       [1],
@@ -187,11 +196,11 @@ function regenerateContent(mode = "u") {
       generationSettings
     );
   } // Table generation mode clause
-  else if (generationMode == "table") {
+  else if (primarlyMode == "table") {
     HTMLContent = generateFakeHTMLTable(generationSettings);
-  } else if (generationMode == "image") {
+  } else if (primarlyMode == "image") {
     let targetDomain = window.location.hostname;
-    if (generationSubMode == "image-single") {
+    if (SecondaryMode == "image-single") {
       let { imageWidth, imageHeight } = generationSettings;
       let seed = getRandomIntInclusive(0, 50000);
       HTMLContent =
@@ -202,7 +211,7 @@ function regenerateContent(mode = "u") {
         "&height=" +
         imageHeight +
         "'/>";
-    } else if (generationSubMode == "image-set") {
+    } else if (SecondaryMode == "image-set") {
       let { imageHeight, imageWidth, imagesCount } = generationSettings;
       HTMLContent += "<div class='image-container'>";
       for (let i = 0; i < imagesCount; i++) {
