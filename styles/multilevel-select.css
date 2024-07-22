@@ -1,6 +1,6 @@
-.ml-sel-parent:not(:has(:checked))~.ml-sel-collapse {
+/* .ml-sel-parent:not(:has(:checked))~.ml-sel-collapse {
     display: none;
-}
+} */
 
 .ml-sel-collapse>option {
     display: none;

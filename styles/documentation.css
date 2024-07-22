@@ -50,21 +50,62 @@ h5 {
 }
 
 .documentation {
-    width: 60vw;
+    width: 80vw;
     height: fit-content;
     margin: 20px auto;
+    background-color: hsl(0, 0%, 80%);
+    border: black 2px solid;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .documentation .doc-nav {
     display: flex;
     flex-direction: column;
     min-height: 150px;
-    border: black 2px solid;
 }
 
 .documentation .doc-nav select {
     height: 50px;
     font-size: 40px;
+}
+
+/* Documentation selector */
+.documentation section {
+    display: none;
+}
+
+.documentation[data-level1="UI"] section.user-interface-doc {
+    display: block;
+}
+
+.documentation[data-level1="GenModes"] section.generation-modes-doc {
+    display: block;
+}
+
+.documentation[data-level2="normal"] section.normal-mode-doc {
+    display: block;
+}
+
+.documentation[data-level2="list"] section.list-mode-doc {
+    display: block;
+}
+
+.documentation[data-level2="table"] section.table-mode-doc {
+    display: block;
+}
+
+.documentation[data-level2="header"] section.header-mode-doc {
+    display: block;
+}
+
+
+.documentation[data-level2="image"] section.image-mode-doc {
+    display: block;
+}
+
+.documentation[data-level1="GenModes"] section.generation-modes-doc>section section {
+    display: block;
 }
 
 @media screen and (max-width: 600px) {
