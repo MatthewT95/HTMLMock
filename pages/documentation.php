@@ -83,8 +83,10 @@
                     In this mode the generator will produce plain content in form of paragraphs
                     and sentences.
                 </p>
+                <a href="#header-paragraph">Paragraphs</a>
+                <a href="#header-sentence">Sentence</a>
                 <section>
-                    <h3>Paragraphs</h3>
+                    <h3 id="header-paragraph">Paragraphs</h3>
                     <p>
                         This mode will produce a series of paragraphs. The number of which will be the paragraph count.
                         There will be a random number of sentences between the min and max paragraph length.
@@ -170,7 +172,7 @@
                     </div>
                 </section>
                 <section>
-                    <h3>Sentences</h3>
+                    <h3 id="header-sentence">Sentences</h3>
                     <p>
                         This mode will produce a series of sentences structure in a single paragraph.
                         There will be as many sentences as specified by sentence count.
@@ -204,8 +206,12 @@
                     This mode allows the user to generate a list of items. The list can be made up of Sentences
                     or paragraphs. The list can be both an unorder and ordered list.
                 </p>
+                <a href="#header-ol-s">ol-s</a>
+                <a href="#header-ul-s">ul-s</a>
+                <a href="#header-ol-p">ol-p</a>
+                <a href="#header-ul-p">ul-p</a>
                 <section>
-                    <h3>Ordered list of sentences</h3>
+                    <h3 id="header-ol-s">Ordered list of sentences</h3>
                     <p>
                         This mode produces a ordered list of sentences. The sentences will be a
                         random number of words between sentence min and max lengths. It will make as
@@ -234,7 +240,7 @@
                     </div>
                 </section>
                 <section>
-                    <h3>Unordered list of sentences</h3>
+                    <h3 id="header-ul-s">Unordered list of sentences</h3>
                     <p>
                         This mode produces a unordered list of sentences. The sentences will be a
                         random number of words between sentence min and max lengths. It will make as
@@ -263,7 +269,7 @@
                     </div>
                 </section>
                 <section>
-                    <h3>Ordered list of paragraphs</h3>
+                    <h3 id="header-ol-p">Ordered list of paragraphs</h3>
                     <p>
                         This mode produces a ordered list of paragraphs. The paragraphs will be
                         a random number of sentences from paragraph min to max length. The sentences will be a
@@ -317,7 +323,7 @@
                     </div>
                 </section>
                 <section>
-                    <h3>Unordered list of paragraphs</h3>
+                    <h3 id="header-ul-p">Unordered list of paragraphs</h3>
                     <p>
                         This mode produces a unordered list of paragraphs. The paragraphs will be
                         a random number of sentences from paragraph min to max length. The sentences will be a
