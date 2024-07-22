@@ -29,13 +29,6 @@ h5 {
 .ui-documentation h2 {
   text-align: center;
 }
-
-.documentation img {
-  margin: 5px auto;
-  display: block;
-  width: 100%;
-}
-
 .page-header {
   position: fixed;
   top: 0;
@@ -50,6 +43,38 @@ h5 {
   border: black 2px solid;
   padding: 10px;
   box-sizing: border-box;
+}
+
+.documentation img {
+  margin: 5px auto;
+  display: block;
+  width: 100%;
+}
+
+.documentation .docSectionNavBtns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: fit-content;
+  width: 100%;
+}
+
+.documentation .btnDocNav {
+  min-width: 200px;
+  width: fit-content;
+  max-width: 100%;
+  height: fit-content;
+  font-size: 30px;
+  background-color: white;
+  box-shadow: none;
+  border: white 5px solid;
+  box-sizing: border-box;
+  margin: 5px;
+}
+
+.documentation .btnDocNav:hover {
+  background-color: darkblue;
+  color: white;
 }
 
 .documentation .doc-nav {

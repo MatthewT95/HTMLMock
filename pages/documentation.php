@@ -73,8 +73,11 @@
                     In this mode the generator will produce plain content in form of paragraphs
                     and sentences.
                 </p>
-                <a href="#header-paragraph">Paragraphs</a>
-                <a href="#header-sentence">Sentence</a>
+                <div class="docSectionNavBtns">
+                    <button class="btnNavParagraph btnDocNav" data-jump-point="#header-paragraph">Goto
+                        paragraph</button>
+                    <button class="btnNavSentence btnDocNav" data-jump-point="#header-sentence">Goto sentence</button>
+                </div>
                 <section>
                     <h3 id="header-paragraph">Paragraphs</h3>
                     <p>
@@ -196,10 +199,12 @@
                     This mode allows the user to generate a list of items. The list can be made up of Sentences
                     or paragraphs. The list can be both an unorder and ordered list.
                 </p>
-                <a href="#header-ol-s">ol-s</a>
-                <a href="#header-ul-s">ul-s</a>
-                <a href="#header-ol-p">ol-p</a>
-                <a href="#header-ul-p">ul-p</a>
+                <div class="docSectionNavBtns">
+                    <button class="btnNavOl-S btnDocNav" data-jump-point="#header-ol-s">Goto ol-s</button>
+                    <button class="btnNavUl-s btnDocNav" data-jump-point="#header-ul-s">Goto ul-s</button>
+                    <button class="btnNavOl-p btnDocNav" data-jump-point="#header-ol-p">Goto ol-p</button>
+                    <button class="btnNavUl-p btnDocNav" data-jump-point="#header-ul-p">Goto ul-p</button>
+                </div>
                 <section>
                     <h3 id="header-ol-s">Ordered list of sentences</h3>
                     <p>
