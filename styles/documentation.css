@@ -1,110 +1,110 @@
 body {
-    width: 100vw;
-    min-height: 100vh;
-    padding-top: 200px;
-    box-sizing: border-box;
-    z-index: 1;
-    font-size: 14pt;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 200px;
+  box-sizing: border-box;
+  z-index: 1;
+  font-size: 14pt;
 }
 
 h2 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    font-weight: bolder;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 
 h3 {
-    font-size: 2rem;
-    text-transform: uppercase;
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
 h4 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 h5 {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .ui-documentation h2 {
-    text-align: center;
+  text-align: center;
 }
 
-.ui-documentation img {
-    margin: 5px auto;
-    display: block;
-    width: 100%;
+.documentation img {
+  margin: 5px auto;
+  display: block;
+  width: 100%;
 }
 
 .page-header {
-    position: fixed;
-    top: 0;
-    background-color: #85c3be;
+  position: fixed;
+  top: 0;
+  background-color: #85c3be;
 }
 
 .documentation {
-    width: 80vw;
-    height: fit-content;
-    margin: 20px auto;
-    background-color: hsl(0, 0%, 80%);
-    border: black 2px solid;
-    padding: 10px;
-    box-sizing: border-box;
+  width: 80vw;
+  height: fit-content;
+  margin: 20px auto;
+  background-color: hsl(0, 0%, 80%);
+  border: black 2px solid;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .documentation .doc-nav {
-    display: flex;
-    flex-direction: column;
-    min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  min-height: 150px;
 }
 
 .documentation .doc-nav select {
-    height: 50px;
-    font-size: 40px;
+  height: 50px;
+  font-size: 40px;
 }
 
 /* Documentation selector */
 .documentation section {
-    display: none;
+  display: none;
 }
 
 .documentation[data-level1="UI"] section.user-interface-doc {
-    display: block;
+  display: block;
 }
 
 .documentation[data-level1="GenModes"] section.generation-modes-doc {
-    display: block;
+  display: block;
 }
 
 .documentation[data-level2="normal"] section.normal-mode-doc {
-    display: block;
+  display: block;
 }
 
 .documentation[data-level2="list"] section.list-mode-doc {
-    display: block;
+  display: block;
 }
 
 .documentation[data-level2="table"] section.table-mode-doc {
-    display: block;
+  display: block;
 }
 
 .documentation[data-level2="header"] section.header-mode-doc {
-    display: block;
+  display: block;
 }
-
 
 .documentation[data-level2="image"] section.image-mode-doc {
-    display: block;
+  display: block;
 }
 
-.documentation[data-level1="GenModes"] section.generation-modes-doc>section section {
-    display: block;
+.documentation[data-level1="GenModes"]
+  section.generation-modes-doc
+  > section
+  section {
+  display: block;
 }
 
 @media screen and (max-width: 600px) {
-
-    .ui-documentation,
-    .generation-modes-doc {
-        width: 100vw;
-    }
+  .documentation {
+    width: 100vw;
+  }
 }
