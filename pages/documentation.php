@@ -68,7 +68,7 @@
         </section>
         <section class="generation-modes-doc">
             <section class="normal-mode-doc">
-                <h2>Normal</h2>
+                <h2 id="header-normal">Normal</h2>
                 <p>
                     In this mode the generator will produce plain content in form of paragraphs
                     and sentences.
@@ -80,6 +80,7 @@
                 </div>
                 <section>
                     <h3 id="header-paragraph">Paragraphs</h3>
+                    <button class="btnNavUl-p btnDocNav" data-jump-point="#header-normal">Goto top</button>
                     <p>
                         This mode will produce a series of paragraphs. The number of which will be the paragraph count.
                         There will be a random number of sentences between the min and max paragraph length.
@@ -166,6 +167,7 @@
                 </section>
                 <section>
                     <h3 id="header-sentence">Sentences</h3>
+                    <button class="btnNavUl-p btnDocNav" data-jump-point="#header-normal">Goto top</button>
                     <p>
                         This mode will produce a series of sentences structure in a single paragraph.
                         There will be as many sentences as specified by sentence count.
@@ -194,7 +196,7 @@
                 </section>
             </section>
             <section class="list-mode-doc">
-                <h2>List</h2>
+                <h2 id="header-list">List</h2>
                 <p>
                     This mode allows the user to generate a list of items. The list can be made up of Sentences
                     or paragraphs. The list can be both an unorder and ordered list.
@@ -206,7 +208,9 @@
                     <button class="btnNavUl-p btnDocNav" data-jump-point="#header-ul-p">Goto ul-p</button>
                 </div>
                 <section>
+
                     <h3 id="header-ol-s">Ordered list of sentences</h3>
+                    <button class="btnNavUl-p btnDocNav" data-jump-point="#header-list">Goto top</button>
                     <p>
                         This mode produces a ordered list of sentences. The sentences will be a
                         random number of words between sentence min and max lengths. It will make as
@@ -235,7 +239,9 @@
                     </div>
                 </section>
                 <section>
+
                     <h3 id="header-ul-s">Unordered list of sentences</h3>
+                    <button class="btnNavUl-p btnDocNav" data-jump-point="#header-list">Goto top</button>
                     <p>
                         This mode produces a unordered list of sentences. The sentences will be a
                         random number of words between sentence min and max lengths. It will make as
@@ -264,7 +270,9 @@
                     </div>
                 </section>
                 <section>
+
                     <h3 id="header-ol-p">Ordered list of paragraphs</h3>
+                    <button class="btnNavUl-p btnDocNav" data-jump-point="#header-list">Goto top</button>
                     <p>
                         This mode produces a ordered list of paragraphs. The paragraphs will be
                         a random number of sentences from paragraph min to max length. The sentences will be a
@@ -318,7 +326,9 @@
                     </div>
                 </section>
                 <section>
+
                     <h3 id="header-ul-p">Unordered list of paragraphs</h3>
+                    <button class="btnNavUl-p btnDocNav" data-jump-point="#header-list">Goto top</button>
                     <p>
                         This mode produces a unordered list of paragraphs. The paragraphs will be
                         a random number of sentences from paragraph min to max length. The sentences will be a
