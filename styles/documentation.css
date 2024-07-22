@@ -26,13 +26,6 @@ h5 {
     font-size: 1.25rem;
 }
 
-.ui-documentation,
-.generation-modes-doc {
-    margin: 20px auto;
-    width: 60vw;
-    height: fit-content;
-}
-
 .ui-documentation h2 {
     text-align: center;
 }
