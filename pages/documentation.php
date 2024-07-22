@@ -32,16 +32,6 @@
                 <option data-filter-value="GenModes" value="header">Header</option>
                 <option data-filter-value="GenModes" value="image">Image</option>
             </select>
-            <select id="doc-nav-l3" class="ml-sel-collapse">
-                <option data-filter-value="normal" value="Paragraph">Paragraph</option>
-                <option data-filter-value="normal" value="Sentence">Sentence</option>
-                <option data-filter-value="list" value="ol-s">Order list (s)</option>
-                <option data-filter-value="list" value="ul-s">Unorder lists (s)</option>
-                <option data-filter-value="list" value="ol-p">Order list (p)</option>
-                <option data-filter-value="list" value="ul-p">Unorder lists (p)</option>
-                <option data-filter-value="image" value="image-single">Image single</option>
-                <option data-filter-value="image" value="image-set">Image set</option>
-            </select>
         </div>
         <section class="user-interface-doc">
             <h2>User Interface</h2>
