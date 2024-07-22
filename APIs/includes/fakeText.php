@@ -139,7 +139,7 @@ function randomWordFromBank()
     return $wordBank[$randomIndex];
 }
 
-function generateFakeSentence($minLength, $maxLength, $capitalizeFirstWord = false, $endWithPeriod = false,$useWordBank) {
+function generateFakeSentence($minLength, $maxLength, $capitalizeFirstWord = false, $endWithPeriod = false,$useWordBank = true) {
     global $wordBank;
     
     $sentenceLength = mt_rand($minLength, $maxLength);
@@ -171,6 +171,21 @@ function generateFakeSentence($minLength, $maxLength, $capitalizeFirstWord = fal
     return $sentence;
 }
 
+function generateFakeParagraph($minLength, $maxLength, $minSentenceLength, $maxSentenceLength, $useWordBank = true) {
+    $paragraphLength = mt_rand($minLength, $maxLength);
+    $paragraph = "";
+    
+    for ($i = 0; $i < $paragraphLength; $i++) {
+        $sentenceLength = mt_rand($minSentenceLength, $maxSentenceLength);
+        $sentence = generateFakeSentence($sentenceLength, $sentenceLength, true, true, $useWordBank);
+        
+        $paragraph .= $sentence . " ";
+    }
+    
+    $paragraph = trim($paragraph);
+    
+    return $paragraph;
+}
 generateWordLengthDistributed();
 generateLetterDistributed();
 generateWordBank();
