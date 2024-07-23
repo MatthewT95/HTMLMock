@@ -19,7 +19,7 @@ body {
   width: 100vw;
   margin: auto;
   margin-top: none;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 210px);
   overflow-y: scroll;
   background-color: black;
   color: white;
