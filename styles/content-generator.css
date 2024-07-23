@@ -6,10 +6,10 @@ body {
 
 #interface #linkHomePage {
   grid-column: 4/5;
-  grid-row: 3/5;
+  grid-row: 3/4;
   font-size: 25pt;
   text-align: center;
-  padding: 20px 0px;
+  padding: 10px 0px;
   display: block;
 }
 
@@ -32,7 +32,7 @@ body {
 }
 
 #interface {
-  height: 200px;
+  height: 210px;
   width: 100vw;
   color: black;
   box-sizing: border-box;
@@ -40,7 +40,7 @@ body {
   background-color: #84bf24;
   display: grid;
   grid-template-columns: 140px 220px 1fr 150px;
-  grid-template-rows: repeat(3, 1fr) auto;
+  grid-template-rows: repeat(3, 1fr);
   padding: 10px;
   column-gap: 5px;
   font-weight: bolder;
@@ -51,7 +51,7 @@ body {
 #btnAppend,
 #btnToggleFormat,
 #btnToggleTheme {
-  font-size: 15pt;
+  font-size: 14pt;
 }
 
 #interface #btnRegenerate {
@@ -116,7 +116,7 @@ body {
 
 #interface #generationSettings {
   grid-column: 3 /4;
-  grid-row: 1/5;
+  grid-row: 1/4;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -333,7 +333,7 @@ td {
   }
 
   #interface #linkHomePage {
-    grid-column: 3/5;
+    grid-column: 3/4;
   }
 }
 
