@@ -39,8 +39,8 @@ body {
   font-size: 10pt;
   background-color: #84bf24;
   display: grid;
-  grid-template-columns: 130px 200px 1fr 150px;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 140px 220px 1fr 150px;
+  grid-template-rows: repeat(3, 1fr) auto;
   padding: 10px;
   column-gap: 5px;
   font-weight: bolder;
@@ -51,7 +51,7 @@ body {
 #btnAppend,
 #btnToggleFormat,
 #btnToggleTheme {
-  font-size: 12pt;
+  font-size: 15pt;
 }
 
 #interface #btnRegenerate {
@@ -81,16 +81,22 @@ body {
 
 #interface #lblGenerationMode,
 #lblBlockCount {
-  font-size: 12pt;
+  font-size: 20pt;
   align-items: center;
   justify-items: center;
   display: flex;
   text-transform: uppercase;
+  text-align: center;
 }
 
 #interface #lblGenerationMode {
   grid-column: 2/3;
   grid-row: 1/2;
+}
+
+#selGenerationMode,
+#selGenerationSubMode {
+  font-size: 15pt;
 }
 
 #interface #selGenerationMode {
@@ -127,13 +133,13 @@ body {
 }
 
 #interface .genSettingInput > label {
-  width: 66%;
+  width: 80%;
   height: 60%;
-  font-size: 1.25em;
+  font-size: 1.5em;
 }
 
 #interface .genSettingInput > input {
-  width: 33%;
+  width: 20%;
   height: 60%;
   font-size: 1.25em;
   box-sizing: border-box;
@@ -259,6 +265,10 @@ td {
   #interface .genSettingInput {
     width: 300px;
     height: 15%;
+  }
+
+  #interface #lblGenerationMode {
+    font-size: 16pt;
   }
 }
 
