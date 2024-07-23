@@ -111,7 +111,7 @@
                 </section>
             </section>
             <section class="table-mode-doc">
-                table
+                <?php include("./doc.table.php")?>
             </section>
             <section class="header-mode-doc">
                 header
