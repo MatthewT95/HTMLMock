@@ -78,8 +78,12 @@
                         paragraph</button>
                     <button class="btnNavSentence btnDocNav" data-jump-point="#header-sentence">Goto sentence</button>
                 </div>
-                <?php include("./doc.normal.paragraph.php") ?>
-                <?php include("./doc.normal.sentence.php") ?>
+                <section>
+                    <?php include("./doc.normal.paragraph.php") ?>
+                </section>
+                <section>
+                    <?php include("./doc.normal.sentence.php") ?>
+                </section>
             </section>
             <section class="list-mode-doc">
                 <h2 id="header-list">List</h2>
@@ -93,10 +97,18 @@
                     <button class="btnNavOl-p btnDocNav" data-jump-point="#header-ol-p">Goto ol-p</button>
                     <button class="btnNavUl-p btnDocNav" data-jump-point="#header-ul-p">Goto ul-p</button>
                 </div>
-                <?php include("./doc.list.ol-s.php") ?>
-                <?php include("./doc.list.ul-s.php") ?>
-                <?php include("./doc.list.ol-p.php") ?>
-                <?php include("./doc.list.ul-p.php") ?>
+                <section>
+                    <?php include("./doc.list.ol-s.php") ?>
+                </section>
+                <section>
+                    <?php include("./doc.list.ul-s.php") ?>
+                </section>
+                <section>
+                    <?php include("./doc.list.ol-p.php") ?>
+                </section>
+                <section>
+                    <?php include("./doc.list.ul-p.php") ?>
+                </section>
             </section>
             <section class="table-mode-doc">
                 table
