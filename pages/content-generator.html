@@ -23,7 +23,7 @@
         <!-- Generation Mode -->
         <label id="lblGenerationMode" for="selGenerationMode">Generation Mode: </label>
         <select id="selGenerationMode" class="ml-sel-parent">
-            <option value="normal">Normal</option>
+            <option selected value="normal">Normal</option>
             <option value="list">Lists</option>
             <option value="table">Table</option>
             <option value="header">Header</option>
@@ -31,7 +31,7 @@
             <option value="none">none</option>
         </select>
         <!-- Sub Generation Mode -->
-        <select id="selGenerationSubMode" class="ml-sel-collapse">
+        <select id="selGenerationSubMode" class="ml-sel-collapse" data-filter-value="normal">
             <option data-filter-value="normal" value="paragraphs">Paragraphs</option>
             <option data-filter-value="normal" value="sentences">Sentences</option>
             <option data-filter-value="list" value="ol-s">Ordered List (s)</option>
