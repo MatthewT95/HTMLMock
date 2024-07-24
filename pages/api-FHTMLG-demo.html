@@ -25,8 +25,61 @@
 <body>
     <h1>Fake HTML Generator Demo</h1>
     <a href="../index.php">Home</a>
+    <h2>API response</h2>
     <section style="text-wrap: wrap;" class="response">
     </section>
+    <h2>API request</h2>
+    <pre>
+        <code>
+            {
+                tagName: "table",
+                id: "mainTable",
+                innerContent: {
+                    innerContent: [
+                        {
+                            tagName: "tr",
+                            innerContent: [{
+                                tagName: "th",
+                                innerContent: "image"
+                            },
+                            {
+                                tagName: "th",
+                                innerContent: "title",
+                                class: "enlarge-text",
+                            },
+                            {
+                                tagName: "th",
+                                innerContent: "description"
+                            }]
+                        }
+                        ,
+                        {
+                            tagName: "tr",
+                            repeats: 7,
+                            innerContent: [
+                                {
+                                    tagName: "td",
+                                    innerContent: "@image",
+                                    options: {
+                                        imageHeight: 100,
+                                        imageWidth: 250,
+                                    }
+                                },
+                                {
+                                    tagName: "td",
+                                    innerContent: "@sentence"
+                                },
+                                {
+                                    tagName: "td",
+                                    innerContent: "@paragraph"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        </code>
+    </pre>
     <script>
         let request = {
             tagName: "table",
