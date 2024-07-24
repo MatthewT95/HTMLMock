@@ -79,10 +79,10 @@
                     <button class="btnNavSentence btnDocNav" data-jump-point="#header-sentence">Goto sentence</button>
                 </div>
                 <section>
-                    <?php include("./doc.normal.paragraph.php") ?>
+                    <?php include("./HTMLMock-basic-doc/doc.normal.paragraph.php") ?>
                 </section>
                 <section>
-                    <?php include("./doc.normal.sentence.php") ?>
+                    <?php include("./HTMLMock-basic-doc/doc.normal.sentence.php") ?>
                 </section>
             </section>
             <section class="list-mode-doc">
@@ -98,20 +98,20 @@
                     <button class="btnNavUl-p btnDocNav" data-jump-point="#header-ul-p">Goto ul-p</button>
                 </div>
                 <section>
-                    <?php include("./doc.list.ol-s.php") ?>
+                    <?php include("./HTMLMock-basic-doc/doc.list.ol-s.php") ?>
                 </section>
                 <section>
-                    <?php include("./doc.list.ul-s.php") ?>
+                    <?php include("./HTMLMock-basic-doc/doc.list.ul-s.php") ?>
                 </section>
                 <section>
-                    <?php include("./doc.list.ol-p.php") ?>
+                    <?php include("./HTMLMock-basic-doc/doc.list.ol-p.php") ?>
                 </section>
                 <section>
-                    <?php include("./doc.list.ul-p.php") ?>
+                    <?php include("./HTMLMock-basic-doc/doc.list.ul-p.php") ?>
                 </section>
             </section>
             <section class="table-mode-doc">
-                <?php include("./doc.table.php")?>
+                <?php include("./HTMLMock-basic-doc/doc.table.php")?>
             </section>
             <section class="header-mode-doc">
                 header
