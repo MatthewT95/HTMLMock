@@ -16,6 +16,7 @@ function is_associative($array)
 function htmlRecursiveGenerator($blueprint)
 {
     $tagName="";
+    $id="";
     $class="";
     $repeats = 1;
     $outputHTML ="";
@@ -50,6 +51,10 @@ function htmlRecursiveGenerator($blueprint)
 
     if (array_key_exists("class",$blueprint)){
         $class=$blueprint["class"];
+    }
+
+    if (array_key_exists("id",$blueprint)){
+        $id=$blueprint["id"];
     }
     
 for ($i=0;$i < $repeats;$i++){
@@ -120,7 +125,7 @@ for ($i=0;$i < $repeats;$i++){
     }
 
     
-    if ($tagName != "") $outputHTML.="<".$tagName." class='$class'>";
+    if ($tagName != "") $outputHTML.="<".$tagName." class='$class' id='$id'>";
     $outputHTML.=$innerHTML;
     if ($tagName != "") $outputHTML.="</".$tagName.">";
 }
