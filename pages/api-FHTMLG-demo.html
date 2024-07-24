@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FHTMLG - demo</title>
+    <style>
+        .green-text {
+            color: green;
+        }
+
+        .enlarge-text {
+            font-weight: bold;
+            font-size: 150%;
+            text-transform: uppercase;
+        }
+
+        #mainTable th {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Fake HTML Generator Demo</h1>
+    <a href="../index.php">Home</a>
+    <section style="text-wrap: wrap;" class="response">
+    </section>
+    <script>
+        let request = {
+            tagName: "table",
+            id: "mainTable",
+            innerContent: {
+                innerContent: [
+                    {
+                        tagName: "tr",
+                        innerContent: [{
+                            tagName: "th",
+                            innerContent: "image"
+                        },
+                        {
+                            tagName: "th",
+                            innerContent: "title",
+                            class: "enlarge-text",
+                        },
+                        {
+                            tagName: "th",
+                            innerContent: "description"
+                        }]
+                    }
+                    ,
+                    {
+                        tagName: "tr",
+                        repeats: 7,
+                        innerContent: [
+                            {
+                                tagName: "td",
+                                innerContent: "@image",
+                                options: {
+                                    imageHeight: 100,
+                                    imageWidth: 250,
+                                }
+                            },
+                            {
+                                tagName: "td",
+                                innerContent: "@sentence"
+                            },
+                            {
+                                tagName: "td",
+                                innerContent: "@paragraph"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+        // Function to post JSON data and retrieve HTML response
+        async function postJsonAndRetrieveHtml(url, jsonData) {
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(jsonData)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+
+                const htmlResponse = await response.text();
+                document.querySelector('.response').innerHTML = htmlResponse;
+            } catch (error) {
+                console.error('There has been a problem with your fetch operation:', error);
+            }
+        }
+
+        // URL of the API endpoint
+        const apiUrl = '../APIs/fakeHTMLGenerator.php';
+
+        // Call the function to post JSON and retrieve HTML
+        postJsonAndRetrieveHtml(apiUrl, request);
+    </script>
+</body>
+
+</html>
