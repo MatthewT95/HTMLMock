@@ -116,7 +116,7 @@ for ($i=0;$i < $repeats;$i++){
             $seed = mt_rand(1,20000);
             $imageWidth = $options["imageWidth"] ?? 200;
             $imageHeight = $options["imageHeight"] ?? 200;
-            $innerHTML .="<img src='http://pseudocontent.matthew-taormina.com/modules/place-holder-image-2.0/?seed=$seed&width=$imageWidth&height=$imageHeight'/>";
+            $innerHTML .="<img src='http://matthew-taormina.com/htmlmock/modules/place-holder-image-2.0/?seed=$seed&width=$imageWidth&height=$imageHeight'/>";
         }
         else
         {

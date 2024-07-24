@@ -204,7 +204,7 @@ function regenerateContent(mode = "u") {
       let { imageWidth, imageHeight } = generationSettings;
       let seed = getRandomIntInclusive(0, 50000);
       HTMLContent =
-        "<img src='http://" + targetDomain + "/modules/place-holder-image-2.0/?seed=" +
+        "<img src='http://" + targetDomain + "/htmlmock/modules/place-holder-image-2.0/?seed=" +
         seed +
         "&width=" +
         imageWidth +
