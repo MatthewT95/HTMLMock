@@ -81,6 +81,26 @@ for ($i=0;$i < $repeats;$i++){
             $useWordBank = $options["useWordBank"] ?? true;
             $innerHTML.=generateFakeSentence($sentenceMinLength,$sentenceMaxLength,$capitalizeFirstWord,$hasPeriod,$useWordBank);
         }
+        else if ($blueprint["innerContent"] == "@word")
+        {
+            $capitalizeFirstWord = $options["capitalizeFirstWord"] ?? false;
+            $useWordBank = $options["useWordBank"] ?? true;
+            $word = "";
+            if ($useWordBank)
+            {
+                $word = randomWordFromBank();
+            }
+            {
+                $word = generateFakeWord();
+            }
+
+            if ($capitalizeFirstWord)
+            {
+                $word = ucfirst($word);
+            }
+
+            $innerHTML.=$word;
+        }
         else
         {
             $innerHTML="none";
