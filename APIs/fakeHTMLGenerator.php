@@ -18,6 +18,7 @@ function htmlRecursiveGenerator($blueprint)
     $tagName="";
     $repeats = 1;
     $outputHTML ="";
+    $options = [];
     // Checks if blueprint is associative
     if (!is_associative($blueprint))
     {
@@ -36,6 +37,11 @@ function htmlRecursiveGenerator($blueprint)
             $repeats = intval($blueprint["repeats"]);
         }
     }
+
+    if (array_key_exists("options",$blueprint) && is_associative($blueprint["options"])){
+        $options=$blueprint["options"];
+    }
+
 
     if (array_key_exists("tagName",$blueprint)){
         $tagName=$blueprint["tagName"];
@@ -59,11 +65,21 @@ for ($i=0;$i < $repeats;$i++){
         }
         else if ($blueprint["innerContent"] == "@paragraph")
         {
-            $innerHTML.=generateFakeParagraph(8,12,8,14,true);
+            $paragraphMinLength = $options["paragraphMinLength"] ?? 8;
+            $paragraphMaxLength = $options["paragraphMaxLength"] ?? 12;
+            $sentenceMinLength = $options["sentenceMinLength"] ?? 8;
+            $sentenceMaxLength = $options["sentenceMaxLength"] ?? 14;
+            $useWordBank = $options["useWordBank"] ?? true;
+            $innerHTML.=generateFakeParagraph($paragraphMinLength,$paragraphMaxLength,$sentenceMinLength,$sentenceMaxLength,$useWordBank);
         }
         else if ($blueprint["innerContent"] == "@sentence")
         {
-            $innerHTML.=generateFakeSentence(8,14,true,true,true);
+            $sentenceMinLength = $options["sentenceMinLength"] ?? 8;
+            $sentenceMaxLength = $options["sentenceMaxLength"] ?? 14;
+            $hasPeriod = $options["hasPeriod"] ?? true;
+            $capitalizeFirstWord = $options["capitalizeFirstWord"] ?? true;
+            $useWordBank = $options["useWordBank"] ?? true;
+            $innerHTML.=generateFakeSentence($sentenceMinLength,$sentenceMaxLength,$capitalizeFirstWord,$hasPeriod,$useWordBank);
         }
         else
         {
