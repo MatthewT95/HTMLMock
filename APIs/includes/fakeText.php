@@ -189,9 +189,4 @@ function generateFakeParagraph($paragraphMinLength,$paragraphMaxLength,$Sentence
 generateWordLengthDistributed();
 generateLetterDistributed();
 generateWordBank();
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-echo generateFakeParagraph(5,10,6,8,true);
 ?>
